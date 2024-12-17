@@ -1,0 +1,15 @@
+[server]
+address = "0.0.0.0"  # Listen on all interfaces
+port = 7878
+
+[client]
+server_address = "server"  # Use Docker service name
+server_port = 7878
+
+[security]
+max_messages_per_sec = 5
+key_directory = "/app/keys/"
+
+[logging]
+log_format = "plain"
+log_level = "info"

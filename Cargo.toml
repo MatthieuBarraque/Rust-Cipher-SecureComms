@@ -1,0 +1,33 @@
+[package]
+name = "secure_messaging"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes-gcm = "0.10.3"
+aes = "0.8.4"
+rand = "0.8"
+zeroize = "1.8.1"
+base64 = "0.22.1"
+once_cell = "1.20.2"
+x25519-dalek = { version = "2.0.1", features = ["static_secrets"] }
+ed25519-dalek = { version = "2.1.1", features = ["rand_core"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.133"
+hex = "0.4.3"
+log = "0.4"
+env_logger = "0.9"
+colored = "2.0"
+chrono = "0.4"
+
+[lib]
+name = "secure_chat"
+path = "src/lib.rs"
+
+[[bin]]
+name = "secure_chat"
+path = "src/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/bin/client.rs"

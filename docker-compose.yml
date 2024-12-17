@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RUST_LOG=info
+      - RUN_MODE=server
+    ports:
+      - "7878:7878"
+    volumes:
+      - ./keys:/app/keys
+    networks:
+      - secure-chat-network
+
+  client1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RUST_LOG=info
+      - RUN_MODE=client
+    depends_on:
+      - server
+    networks:
+      - secure-chat-network
+    stdin_open: true
+    tty: true
+
+  client2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - RUST_LOG=info
+      - RUN_MODE=client
+    depends_on:
+      - server
+    networks:
+      - secure-chat-network
+    stdin_open: true
+    tty: true
+
+networks:
+  secure-chat-network:
+    driver: bridge

@@ -1,0 +1,43 @@
+[server]
+# Adresse et port sur lesquels le serveur écoute
+address = "127.0.0.1"
+port = 7878
+
+[security]
+# Limite du nombre de messages qu'un utilisateur peut envoyer par seconde
+max_messages_per_sec = 5
+
+# Chemin vers le répertoire des clés
+key_directory = "keys/"
+
+# Niveau de journalisation (options: "error", "warn", "info", "debug", "trace")
+log_level = "info"
+
+[client]
+# Adresse et port du serveur auquel le client se connecte
+server_address = "127.0.0.1"
+server_port = 7878
+
+# Délai de reconnexion en secondes en cas de déconnexion
+reconnect_delay = 5
+
+[logging]
+# Format de la journalisation (options: "plain", "json")
+log_format = "plain"
+
+# Chemin vers le fichier de journalisation (laisser vide pour la sortie standard)
+log_file = ""
+
+[encryption]
+# Algorithme de chiffrement utilisé (options: "AES-256-GCM", "ChaCha20-Poly1305")
+algorithm = "AES-256-GCM"
+
+# Taille de la clé de chiffrement en bits
+key_size = 256
+
+[network]
+# Timeout de connexion en secondes
+connection_timeout = 10
+
+# Taille du buffer de réception en octets
+buffer_size = 4096
