@@ -122,8 +122,8 @@ Le projet est structuré de manière modulaire pour faciliter la maintenance et 
 1. **Cloner le Répertoire**
 
    ```bash
-   git clone bouga
-   cd bouga
+   git clone git@github.com:MatthieuBarraque/Rust-Cipher-SecureComms.git
+   cd Rust-Cipher-SecureComms
    ```
 
 2. **Compiler le Projet**
